@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ExpertiseCo | Professional Business Consulting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#600004",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d8dadc",
+                    "primary-container": "#131b2e",
+                    "on-background": "#191c1e",
+                    "surface-variant": "#e0e3e5",
+                    "surface-bright": "#f7f9fb",
+                    "inverse-surface": "#2d3133",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed": "#ffdad5",
+                    "surface-container-high": "#e6e8ea",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#bec6e0",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-error": "#ffffff",
+                    "surface-container": "#eceef0",
+                    "on-primary-container": "#7c839b",
+                    "outline-variant": "#c6c6cd",
+                    "on-secondary-fixed-variant": "#910a0e",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#75859d",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed": "#410002",
+                    "primary": "#000000",
+                    "on-surface-variant": "#45464d",
+                    "secondary-fixed-dim": "#ffb4aa",
+                    "surface": "#f7f9fb",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary": "#b32822",
+                    "secondary-container": "#fd5d50",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#bec6e0",
+                    "background": "#f7f9fb",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-tint": "#565e74",
+                    "outline": "#76777d",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "surface-container-low": "#f2f4f6",
+                    "on-primary-fixed": "#131b2e",
+                    "tertiary": "#000000",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-container": "#0b1c30",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["60px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #131b2e !important;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm h-[72px]">
+<div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-12">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">ExpertiseCo</h1>
+<!-- Desktop Navigation -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Case Studies</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Insights</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="lg:hidden material-symbols-outlined text-primary text-2xl">menu</button>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">
+                    Get Started
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="relative px-margin-mobile md:px-margin-desktop py-16 md:py-32 overflow-hidden bg-surface">
+<div class="max-w-container-max mx-auto flex flex-col lg:flex-row items-center gap-16">
+<div class="w-full lg:w-1/2 z-10 text-center lg:text-left">
+<span class="inline-block px-3 py-1 rounded bg-on-tertiary-fixed-variant/10 text-on-tertiary-fixed-variant font-label-sm mb-4">STRATEGIC EXCELLENCE</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-6 leading-tight">
+                        Accelerate Your Business Growth
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg mx-auto lg:mx-0">
+                        We partner with ambitious organizations to solve complex challenges and unlock sustainable high-performance value.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-lg font-label-md text-lg active:scale-95 transition-all shadow-lg shadow-secondary/20">
+                            Get Started
+                        </button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-label-md text-lg hover:bg-primary/5 transition-all">
+                            View Services
+                        </button>
+</div>
+</div>
+<div class="w-full lg:w-1/2 relative">
+<div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl z-10">
+<img alt="A professional, minimalist business consulting scene featuring a diverse team of three strategists in a high-end, glass-walled boardroom." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR5d1pPh1DpWaHb9DZZJuHFKNOX3hotcV_ilJ1z87fH0cCLy9kc1OcITAyyioJACvREFakmYW2IFNN-4cLwVUJgqNj6RiyOnFFNhWBCjLLHjRWTG9ynJ45_NK-Sh3R1XolUjjlWaQTnsSd1yrf8FGGrkrqeMMrMdIwrot62RhZx1t1JE2C3u-FzZuXwdDrcvm42-18t8O_C0al6z9nLBdVOmCHBQCScErPnsHnKWAoQLWRfz4ujzkSAbjkTjGgKhZAt8WSnE4-uIA"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -top-6 -right-6 w-48 h-48 bg-primary-container/10 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-12 md:py-20 bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="p-10 bg-surface-container-low rounded-xl border border-outline-variant/30 text-center">
+<div class="text-secondary font-display-lg text-4xl md:text-5xl mb-2">500+</div>
+<div class="font-label-md text-on-surface-variant">Global Clients</div>
+</div>
+<div class="p-10 bg-primary-container text-white rounded-xl text-center shadow-xl">
+<div class="font-display-lg text-4xl md:text-5xl mb-2">98%</div>
+<div class="font-label-md opacity-80">Success Rate</div>
+</div>
+<div class="p-10 bg-surface-container-low rounded-xl border border-outline-variant/30 text-center">
+<div class="text-secondary font-display-lg text-4xl md:text-5xl mb-2">15+</div>
+<div class="font-label-md text-on-surface-variant">Years Expertise</div>
+</div>
+<div class="p-10 bg-surface-container-low rounded-xl border border-outline-variant/30 text-center">
+<div class="text-secondary font-display-lg text-4xl md:text-5xl mb-2">$2B+</div>
+<div class="font-label-md text-on-surface-variant">Value Created</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg md:text-[44px] text-primary mb-4">Our Specialized Services</h2>
+<p class="font-body-md text-on-surface-variant">Tailored strategies designed for modern markets and sustainable operational efficiency.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white p-10 rounded-2xl card-shadow border border-slate-100 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl">insights</span>
+</div>
+<h3 class="font-headline-md text-primary mb-4">Strategic Planning</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Long-term roadmaps to navigate complex market shifts and ensure competitive dominance.</p>
+<a class="inline-flex items-center text-secondary font-label-md gap-2 hover:gap-3 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-10 rounded-2xl card-shadow border border-slate-100 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl">analytics</span>
+</div>
+<h3 class="font-headline-md text-primary mb-4">Market Analysis</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Data-driven insights to identify emerging opportunities and mitigate potential risks.</p>
+<a class="inline-flex items-center text-secondary font-label-md gap-2 hover:gap-3 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-10 rounded-2xl card-shadow border border-slate-100 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 bg-primary-container rounded-xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-white text-3xl">account_balance</span>
+</div>
+<h3 class="font-headline-md text-primary mb-4">Financial Advisory</h3>
+<p class="font-body-md text-on-surface-variant mb-6">Optimizing capital structure and financial operations for maximum enterprise value.</p>
+<a class="inline-flex items-center text-secondary font-label-md gap-2 hover:gap-3 transition-all" href="#">
+                            Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-24 bg-surface overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg md:text-[44px] text-primary mb-4">Trusted by Industry Leaders</h2>
+<p class="font-body-md text-on-surface-variant">Hear from the executives and entrepreneurs who have scaled their operations with our guidance.</p>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<div class="p-10 bg-surface-container-high rounded-2xl relative">
+<span class="material-symbols-outlined text-primary/10 text-8xl absolute top-6 right-6">format_quote</span>
+<p class="font-body-lg italic text-on-surface relative z-10 mb-8 leading-relaxed">
+                            "ExpertiseCo didn't just provide a report; they delivered a transformation. Our operational efficiency increased by 40% within six months of implementing their strategic roadmap."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+<img alt="Sarah Jenkins CEO" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLktity99QrNqrMqPNc3POEM8cP84k0ljw7hDmk0I7dWlbHnQOWl2D6THGEH_4PSNSNId4eklBBY-g1n4tZLAGNISdkrmefokTy42eCINcFj7mZ2q7cJh9QzBLTT5ciHNrs1wSTSDvA4TnNyi6n4H8pX1msL84EK8EWap0P9B_8ikiwxoxwJnKn2ptQjWbMuhQSQ03BJMKe4EKA8YKIFuAiZud38Uqk3ouFRkDAsNXgHdrOqvQbpQ1Qgsxp3j1v1nkel8YIjVPMS0"/>
+</div>
+<div>
+<div class="font-label-md text-primary">Sarah Jenkins</div>
+<div class="text-sm text-on-surface-variant">CEO, TechFlow Systems</div>
+</div>
+</div>
+</div>
+<div class="p-10 bg-primary-container text-white rounded-2xl relative shadow-xl">
+<span class="material-symbols-outlined text-white/5 text-8xl absolute top-6 right-6">format_quote</span>
+<p class="font-body-lg italic text-white/90 relative z-10 mb-8 leading-relaxed">
+                            "The depth of their market analysis was staggering. They identified a niche market segment that has now become our primary revenue driver. A truly expert team."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
+<img alt="David Chen Managing Director" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB37V5tnaEi5sXO-1061ukLfTH9svE9HMUhVSVcgB-l1JzJNdiAVzBpWeZT-RktEGYjUdO4MFDahiM1fPmtFK2VRfssjVlNimGjQIM6XD_y-GHanNw8Gl4UTNIF5KXzghpK3BKFwu8MR1TX89_-eBUOmdbeMuJ6bw781XiPilnEMwDjNeH2NV56ta7BUObzK158Yp5IQkK-02cVPMTBmbcq2jOXWxxTvJQ0WEog-4ckTZ3LWBcUz8yJO0O1dLkXeSyalVRWQdlmxQY"/>
+</div>
+<div>
+<div class="font-label-md text-white">David Chen</div>
+<div class="text-sm opacity-70">Managing Director, Global Logistics Corp</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg md:text-[44px] text-primary mb-4">Investment for Growth</h2>
+<p class="font-body-md text-on-surface-variant">Transparent engagement models for every stage of your business journey.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-5xl mx-auto">
+<!-- Standard Plan -->
+<div class="bg-white p-12 rounded-2xl border border-outline-variant/30 flex flex-col items-center text-center hover:shadow-lg transition-shadow">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Focus Package</span>
+<div class="flex items-baseline mb-8">
+<span class="text-5xl font-bold text-primary">$4,900</span>
+<span class="text-on-surface-variant ml-2">/ month</span>
+</div>
+<ul class="space-y-4 mb-12 text-left w-full">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Quarterly Strategic Review</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Bi-weekly Progress Calls</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-on-surface-variant">Market Performance Dashboard</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline">cancel</span>
+<span class="text-on-surface-variant line-through opacity-50">On-site Integration</span>
+</li>
+</ul>
+<button class="w-full py-4 border-2 border-primary text-primary font-label-md rounded-lg hover:bg-primary hover:text-white transition-all mt-auto">Select Standard</button>
+</div>
+<!-- Premium Plan -->
+<div class="bg-primary-container p-12 rounded-2xl shadow-2xl relative flex flex-col items-center text-center overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary text-white px-6 py-2 font-label-sm rounded-bl-lg">MOST POPULAR</div>
+<span class="font-label-sm text-white/60 uppercase tracking-widest mb-4">Accelerate Package</span>
+<div class="flex items-baseline mb-8">
+<span class="text-5xl font-bold text-white">$9,500</span>
+<span class="text-white/60 ml-2">/ month</span>
+</div>
+<ul class="space-y-4 mb-12 text-left w-full">
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span>Monthly Strategic Alignment</span>
+</li>
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span>Unlimited Priority Advisory</span>
+</li>
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span>Full Competitive Intelligence</span>
+</li>
+<li class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span>On-site Executive Workshop</span>
+</li>
+</ul>
+<button class="w-full py-4 bg-secondary text-white font-label-md rounded-lg shadow-lg shadow-secondary/30 active:scale-95 transition-all mt-auto">Select Premium</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-24 bg-surface relative">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row min-h-[600px]">
+<div class="w-full lg:w-2/5 p-12 md:p-20 bg-primary-container text-white flex flex-col justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-6 leading-tight">Let's build your future.</h2>
+<p class="font-body-lg opacity-80 mb-12">Contact us today to schedule an initial consultation and discover how ExpertiseCo can transform your operations.</p>
+<div class="space-y-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container text-2xl">mail</span>
+<span class="font-label-md">consult@expertiseco.com</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container text-2xl">phone_iphone</span>
+<span class="font-label-md">+1 (555) 000-0000</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary-container text-2xl">location_on</span>
+<span class="font-label-md">Manhattan Corporate HQ, NYC</span>
+</div>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-white/10 flex gap-8">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-container transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-container transition-colors">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-container transition-colors">work</span>
+</div>
+</div>
+<div class="w-full lg:w-3/5 p-12 md:p-20">
+<form class="space-y-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+<div class="space-y-2">
+<label class="font-label-sm text-on-surface-variant uppercase tracking-wider">Full Name</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-slate-200 py-4 px-0 focus:ring-0 focus:border-secondary transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-on-surface-variant uppercase tracking-wider">Corporate Email</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-slate-200 py-4 px-0 focus:ring-0 focus:border-secondary transition-all" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-on-surface-variant uppercase tracking-wider">Message</label>
+<textarea class="w-full bg-transparent border-0 border-b-2 border-slate-200 py-4 px-0 focus:ring-0 focus:border-secondary transition-all resize-none" placeholder="How can we help you?" rows="4"></textarea>
+</div>
+<div class="pt-6">
+<button class="w-full md:w-auto px-12 py-5 bg-secondary text-white font-label-md rounded-xl hover:opacity-90 transition-all flex items-center justify-center gap-3 group shadow-xl shadow-secondary/20" type="submit">
+                                    Send Message 
+                                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-tertiary-container w-full">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
+<div class="col-span-1">
+<h2 class="font-headline-md text-headline-md font-bold text-white mb-6">ExpertiseCo</h2>
+<p class="font-body-md text-on-primary-container/80 max-w-xs">
+                        Elevating businesses through precision strategy and forward-thinking leadership advisory.
+                    </p>
+</div>
+<div>
+<h4 class="font-label-md text-white mb-6 uppercase tracking-widest text-xs">Services</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Strategic Planning</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Market Analysis</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Financial Advisory</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Operations</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-white mb-6 uppercase tracking-widest text-xs">Company</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Case Studies</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Insights</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-white mb-6 uppercase tracking-widest text-xs">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-body-md text-on-primary-container/80 hover:text-white transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body-md text-on-primary-container/60">
+                    © 2024 ExpertiseCo Consulting. All rights reserved.
+                </p>
+<div class="flex gap-8">
+<span class="material-symbols-outlined text-on-primary-container/60 cursor-pointer hover:text-white">language</span>
+<span class="material-symbols-outlined text-on-primary-container/60 cursor-pointer hover:text-white">group</span>
+<span class="material-symbols-outlined text-on-primary-container/60 cursor-pointer hover:text-white">business</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        // Apply classes for observing
+        document.querySelectorAll('section > div').forEach(div => {
+            div.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(div);
+        });
+    </script>
+</body></html>
